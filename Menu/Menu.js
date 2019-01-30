@@ -14,5 +14,10 @@ const menuButton = document.getElementsByClassName('menu-button')[0];
 menuButton.addEventListener('click', toggleMenu);
 // close menu if open and anywhere on the page
 window.addEventListener('click', (event) => {
-  if (event.target !== menu && menu.classList.contains('menu--open')) toggleMenu();
+  if (event.target !== menu &&
+      event.target !== menuButton &&
+      menu.classList.contains('menu--open')
+  ) {
+    toggleMenu();
+  }
 }, true);
