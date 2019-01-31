@@ -15,13 +15,25 @@
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
-}
 
-.menu ul li{
-  list-style-type: none;
-  font-size: 32px;
-  padding: 30px 0;
-  text-align: center;
+  ul {
+    padding: 0;
+
+    li{
+      list-style-type: none;
+      font-size: 32px;
+      padding: 30px 0;
+      text-align: center;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: green;
+        border-radius: 5px;
+        padding-left: 50px;
+      }
+    }
+  }
 }
 
 .menu--open {

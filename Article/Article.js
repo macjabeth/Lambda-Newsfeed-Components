@@ -4,21 +4,44 @@ class Article {
   constructor (domElement) {
     // assign this.domElement to the passed in domElement
     this.domElement = domElement;
-    // set expanding transition
-    this.domElement.style.transition = '0.5s';
+    // set initial overflow
+    this.domElement.style.overflow = 'hidden';
     // create a reference to the ".expandButton" class.
     this.expandButton = this.domElement.getElementsByClassName('expandButton')[0];
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.textContent = 'expand';
+    this.expandButton.textContent = 'v';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => this.expandArticle());
   }
 
   expandArticle () {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle('article-open');
-    this.expandButton.textContent = this.expandButton.textContent === 'expand'
-      ? 'collapse' : 'expand';
+    const articleOpen = this.domElement.classList.toggle('article-open');
+
+    const rect = this.domElement.getBoundingClientRect();
+
+    if (articleOpen) {
+      console.log('opening');
+      TweenMax.to(this.domElement, 0.5, {
+        height: 400,
+        onComplete: () => {
+          this.domElement.style.overflow = 'scroll';
+        }
+      });
+    } else {
+      console.log('closing');
+      TweenMax.to(this.domElement, 0.5, {
+        height: 50,
+        scrollto: { x: 0, y: rect.top },
+        onComplete: () => {
+          this.domElement.style.overflow = 'hidden';
+        }
+      });
+    }
+
+    TweenMax.to(this.expandButton, 0.5, {
+      rotation: articleOpen ? 180 : 0
+    });
   }
 }
 
