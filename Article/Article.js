@@ -18,8 +18,6 @@ class Article {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     const articleOpen = this.domElement.classList.toggle('article-open');
 
-    const rect = this.domElement.getBoundingClientRect();
-
     if (articleOpen) {
       console.log('opening');
       TweenMax.to(this.domElement, 0.5, {
