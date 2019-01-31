@@ -35,6 +35,125 @@
   margin: 0;
   font-size: 48px;
 }
+.menu-button {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
+.menu {
+  position: fixed;
+  top: 75px;
+  left: -350px;
+  width: 350px;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: #81C784;
+  border: 1px solid #004D40;
+  border-left: none;
+  border-bottom: none;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+.menu ul {
+  padding: 0;
+}
+.menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 30px 0;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.menu ul li:hover {
+  background-color: green;
+  border-radius: 5px;
+  padding-left: 50px;
+}
+.menu--open {
+  left: 0;
+}
+.articles {
+  margin-top: 95px;
+}
+.article-wrapper {
+  position: relative;
+}
+.article-wrapper .article {
+  margin: 20px 10%;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  height: 50px;
+  -webkit-box-shadow: 2px 2px 2px lightgrey;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+.article-wrapper .article h2 {
+  font-size: 28px;
+  padding: 0;
+  margin: 15px 0 0;
+}
+.article-wrapper .article .date {
+  margin: 0;
+  font-size: 14px;
+}
+.article-wrapper .article .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.article-wrapper .article .expandButton {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0 10px;
+  border-radius: 3px;
+}
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.form #articleform {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+.form #articleform .form-item {
+  margin-right: 10px;
+}
+.form #articleform .form-item #form-title {
+  width: 20vw;
+}
+.form #articleform input {
+  background-color: snow;
+  border-radius: 5px;
+  padding: 5px 3px;
+  outline: none;
+}
+.form #articleform input[type="submit"] {
+  padding: 5px 20px;
+}
+.form textarea {
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
+  height: 100px;
+}
 html,
 body {
   margin: 0;
