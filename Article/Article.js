@@ -31,5 +31,39 @@ class Article {
 */
 
 let articles = document.querySelectorAll('.article');
+let form = document.getElementById('articleform');
 
 articles.forEach(article => new Article(article));
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  console.log('working');
+  submitArticle();
+});
+
+function submitArticle () {
+  const div = document.createElement('div');
+  div.classList.add('article');
+
+  const h2 = document.createElement('h2');
+  h2.textContent = document.getElementById('form-title').value;
+
+  const dateP = document.createElement('p');
+  dateP.classList.add('date');
+  dateP.textContent = new Date();
+
+  const textP = document.createElement('p');
+  textP.textContent = document.querySelector('textarea[name="comment"]').value;
+
+  const btn = document.createElement('span');
+  btn.classList.add('expandButton');
+
+  div.appendChild(h2);
+  div.appendChild(dateP);
+  div.appendChild(textP);
+  div.appendChild(btn);
+
+  document.getElementsByClassName('articles')[0].appendChild(div);
+
+  new Article(div);
+}

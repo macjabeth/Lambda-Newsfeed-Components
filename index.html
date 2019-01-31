@@ -5,6 +5,7 @@
     <title>Lambda School Newsfeed</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./CSS/index.css" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="./Menu/Menu.js" async></script>
     <script src="./Article/Article.js" async></script>
   </head>
@@ -124,6 +125,18 @@
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem odio, enim eius inventore corrupti incidunt sed praesentium placeat ab repellendus perferendis! Corporis mollitia debitis atque tempore numquam. Eius, molestiae eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dignissimos, tempora in hic doloribus doloremque animi facere beatae eaque saepe eos accusantium labore ea vero sunt alias minus cupiditate odit.</p>
         <span class='expandButton'></span>
       </div>
+    </div>
+    <div class="form">
+      <form id="articleform">
+        <div class="form-item">
+          <label for="form-title">Title:</label>
+          <input type="text" name="form-title" id="form-title" required>
+        </div>
+        <div class="form-item">
+          <input type="submit" value="Post!">
+        </div>
+      </form>
+      <textarea name="comment" id="articleform">Enter text here...</textarea>
     </div>
   </body>
 </html>
