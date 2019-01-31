@@ -31,8 +31,8 @@ class Article {
     } else {
       console.log('closing');
       TweenMax.to(this.domElement, 0.5, {
+        scrollto: 0,
         height: 50,
-        scrollto: { x: 0, y: rect.top },
         onComplete: () => {
           this.domElement.style.overflow = 'hidden';
         }
